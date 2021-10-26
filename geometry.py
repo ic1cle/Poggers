@@ -5,7 +5,7 @@ typeCalc = input("What Calculator? {Pythagoras, Area, Parameter, Volume} ")
 tyoeCalc = typeCalc.lower()
 
 # VOLUME
-if typeCalc == "Volume":
+def volume():
     _input_ = input("Shape? [Prism] [Circle] [Triangle: ")
     _input_ = _input_.lower()
     vol = 0
@@ -28,9 +28,8 @@ if typeCalc == "Volume":
         print ("Select a valid shape")
     print ("%.2f" % vol)
 
-
 # PARAMETER
-if typeCalc == "parameter":
+def parameter():
     _input_ = input("Shape? [Square] [Circle] [Rectangle] [Triangle: ")
     _input_ = _input_.lower()
     parameter = 0
@@ -59,62 +58,70 @@ if typeCalc == "parameter":
     print ("%.2f" % parameter)
 
 # AREA
-if typeCalc == "area":
+def area():
   input_ = input("Shape? [Square] [Circle] [Rectangle] [Triangle: ")
   input_ = input_.lower()
     
   area = 0
   pie = 3.14
-    if input_ == "square":
+if input_ == "square":
         side = int(input("Enter the value of side: "))
         area = area + (side ** 2)
         
-    elif input_ == "circle":
+elif input_ == "circle":
         r = int(input("Enter the value of radius: "))
         area = area + (pie * r ** 2)
         
-    elif input_ == "rectangle":
+elif input_ == "rectangle":
         length = int(input("Enter the value of length: "))
         width = int(input("Enter the value of length: "))
         area = area + (length * width)
         
-    elif input_ == "triangle":
+elif input_ == "triangle":
         base = int(input("Enter the value of base: "))
         height = int(input("Enter the value of height: "))
         area = area +(0.5 * base * height)
-    else:
+else:
         print ("Select a valid shape")
-    print ("%.2f" % area)
+        print ("%.2f" % area)
   
 # PYTHAGORAS
-if typeCalc == "pythagoras":
-  formula = input('Which side (K1, K2, H) do you wish to calculate? ')
+def pythagoras():
+  formula = input('Which side (O, A, H) do you wish to calculate? ')
   formula = formula.lower()
 
   if formula == 'h':
-	  side_a = int(input('K1: '))
-	  side_b = int(input('K2: '))
+	  side_a = int(input('o: '))
+	  side_b = int(input('a: '))
 
 	  side_c = sqrt(side_a * side_a + side_b * side_b)
 	
 	  print("H = " + str(side_c))
 
-  elif formula == 'k1':
-    side_b = int(input('K2: '))
-    side_c = int(input('H: '))
+  elif formula == 'o':
+    side_b = int(input('a: '))
+    side_c = int(input('h: '))
     
     side_a = sqrt((side_c * side_c) - (side_b * side_b))
     
-    print("K1 = " + str(side_a))
+    print("O = " + str(side_a))
 
-  elif formula == 'k2':
-    side_a = int(input('K1: '))
-    side_b = int(input('H: '))
+  elif formula == 'a':
+    side_a = int(input('o: '))
+    side_b = int(input('h: '))
         
     side_c = sqrt(side_c * side_c - side_a * side_a)
     
-    print("K2 = " + str(side_c))
+    print("A = " + str(side_c))
 
   else:
 	  print('fck off')
 
+if typeCalc == "Volume":
+    volume()
+elif typeCalc == "parameter":
+    parameter()
+elif typeCalc == "area":
+    area()
+elif typeCalc == "pythagoras":
+    pythagoras()
